@@ -2,13 +2,13 @@
 ## Group Intfo:
 * Group Name : WMSN Develop Group
 * Project Name : Homonym, Say what?
-* URL :
+* URL : http://127.0.0.1:5502/Project_Review/index.html
 
 ## Developers:
-William Chenausky   Github: https://github.com/wchenausky  Contact: williamchenausky@yahoo.com
-Marisa NeSmith   Github: ??  Contact: marisanesmith@yahoo.com
-Nicholas Podniestrzanski   Github:  https://github.com/Nickpodski Contact: nickpodski@gmail.com
-Shuting Zhao  Github: https://github.com/zst199394  Contct: zst9394@outlook.com
+* William Chenausky   Github: https://github.com/wchenausky  Contact: williamchenausky@yahoo.com
+* Marisa NeSmith   Github: https://github.com/marisanesmith   Contact: marisanesmith@yahoo.com
+* Nicholas Podniestrzanski   Github:  https://github.com/Nickpodski Contact: nickpodski@gmail.com
+* Shuting Zhao  Github: https://github.com/zst199394  Contct: zst9394@outlook.com
 
 ## Project Overview
 In this project,our group is going to build a responsive application where users can search for a word to retrieve a definition from the Merrian Webster Dictionary and a definition from the Urban Dictionary.The result will show the users the real definition of the word as a slang definition.

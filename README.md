@@ -3,7 +3,7 @@
 * Group Name : WMSN Develop Group
 * Project Name : Homonym, Say what?
 * URL : http://127.0.0.1:5502/Project_Review/index.html
-![web home](./webhome.phg)
+![web home](./webhome.png)
 
 ## Developers:
 * William Chenausky   Github: https://github.com/wchenausky  Contact: williamchenausky@yahoo.com

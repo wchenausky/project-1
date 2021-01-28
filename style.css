@@ -7,7 +7,7 @@ nav {
     text-align: center;
     color: rgb(45, 208, 236);
     height: 80px;
-    padding-right: 7px;
+    padding-right: 5px;
     border-radius: 4px;
 }
 section {
@@ -48,4 +48,41 @@ button {
     background-color: rgb(75, 247, 230);
     color: rgb(126, 102, 171);
     font-size: 18px;
+}
+.secondpage {
+    margin: 15px;
+}
+aside {
+    float :left;
+    width : 30%;
+    height : 620px;
+    background-color: rgb(112, 94, 199);
+    border-radius: 4px;
+    padding-top: 15px;;
+    color :white;
+    font-size: 25px;
+    text-align: center;
+    opacity: 0.95;   
+}
+article {
+    float: right;
+    background-color: rgb(155, 87, 223);
+    border-radius: 4px;
+    padding-top: 10px;
+    width : 68%;
+    height : 200px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+.article2 {
+    float :right;
+    background-color: rgb(198, 66, 182);
+    border-radius: 4px;
+    margin-top: 2%;
+    width : 68%;
+    height : 400px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
 }

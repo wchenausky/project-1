@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+h1 {
+    font-family: 'Montserrat';
+}
+
 body {
-    background-color: rgb(94, 20, 231);
+    
+    /* background-color: white; */
 }
 nav {
     background-color: rgb(143, 210, 230);
@@ -10,7 +17,7 @@ nav {
     padding-right: 7px;
     border-radius: 4px;
 }
-section {
+/* section {
     margin: auto;
     width: 70%;
     margin-top: 15px;
@@ -48,4 +55,4 @@ button {
     background-color: rgb(75, 247, 230);
     color: rgb(126, 102, 171);
     font-size: 18px;
-}
+} */

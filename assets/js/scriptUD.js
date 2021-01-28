@@ -1,5 +1,8 @@
 $("#startSearch").click(function(e) {
     e.preventDefault();
+
+    $("#pageOne").hide();
+    $("#pageTwo").show();
     var userInput = $("#textarea1").val().trim();
     var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 
     console.log(q);

@@ -5,7 +5,15 @@ h1 {
     text-transform: uppercase;
     text-align: center;
     padding: 30px;
+    border: solid 2px;
 }
+
+p {
+    padding: 30px;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
 
 body {
     
@@ -20,6 +28,12 @@ nav {
     padding-right: 7px;
     border-radius: 4px;
 }
+
+p {
+    gi
+}
+
+
 /* section {
     margin: auto;
     width: 70%;

@@ -24,3 +24,12 @@ nav {
     border-radius: 4px;
 }
 
+.container {
+    opacity: 1;
+    transition: 1s;
+}
+
+.fade-out {
+    transition: 1s;
+    opacity: 0;
+}

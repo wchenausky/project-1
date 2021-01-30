@@ -13,6 +13,7 @@ $("#startSearch").click(function(e) {
       "async": true,
       "crossDomain": true,
       "url": `${q}`,
+      
       "method": "GET",
       "headers": {
         "x-rapidapi-key": "a81dca7536msh6bc3d3699a87596p1ae89bjsn3961fc20945c",

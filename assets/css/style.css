@@ -38,3 +38,8 @@ nav {
     transition: 1s;
     opacity: 0;
 }
+
+#pageTwo {
+    margin-top: 70px;
+    margin-left: 15px;
+}

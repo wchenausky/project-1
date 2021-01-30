@@ -1,4 +1,6 @@
 $("#startSearch").click(function(e) {
+   $("#firstpage").attr("style","display=none");
+   $("#secondpage").removeAttr("style");
     e.preventDefault();
     var userInput = $("#textarea1").val().trim();
     var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 

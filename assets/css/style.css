@@ -5,13 +5,19 @@ h1 {
     text-transform: uppercase;
     text-align: center;
     padding: 30px;
-    border: solid 2px;
+    border: solid 1px;
+    border-radius: 8px;
 }
 
 p {
     padding: 30px;
     font-family: 'Montserrat';
     text-align: center;
+}
+
+#wordOfDay {
+    border: 1px solid;
+    border-radius: 8px;
 }
 
 nav {

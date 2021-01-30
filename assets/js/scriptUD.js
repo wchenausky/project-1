@@ -2,6 +2,12 @@ $("#startSearch").click(function(e) {
    $("#firstpage").attr("style","display=none");
    $("#secondpage").removeAttr("style");
     e.preventDefault();
+    $("#pageOne").addClass("fade-out");
+    setTimeout(function() {
+      $("#pageOne").hide();
+      $("#pageTwo").show();
+      $("#pageTwo").removeClass("fade-out");
+    }, 1000);
     var userInput = $("#textarea1").val().trim();
     var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 
     console.log(q);

@@ -28,3 +28,10 @@ $("#startSearch").click(function(e) {
       console.log(response);
     });
   });
+
+  $("#textarea1").keypress(function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      $("#startSearch").click();
+    }
+  });

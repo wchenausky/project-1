@@ -20,7 +20,7 @@ $("#startSearch").click(function (e) {
 });
 
 function displayDef(defLength, userInput, def) {
-  
+  console.log(defLength[0])
   var defEntry = $("<div>");
   var h5 = $("<h5>");
   h5.text(userInput);
@@ -28,11 +28,11 @@ function displayDef(defLength, userInput, def) {
   $("#dictionary").append(defEntry);
   for (var i =0; i < defLength; i++){
     var para = $("<p>")
-    para.text("1: "+ def[i] )
+    para.text((i+1) + ": " + def[i] )
   
     $(defEntry).append(para);
     //console.log(response[0].shortdef[i]);
-
+    
     
 
    };

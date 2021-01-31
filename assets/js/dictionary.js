@@ -13,13 +13,15 @@ $("#startSearch").click(function (e) {
   }).then(function (response) {
    var defLength = response[0].shortdef.length
    var def = response[0].shortdef
-  displayDef(defLength, userInput, def)
+   var noun =response[0].fl
+  displayDef(defLength, userInput, def, noun)
   console.log(response)
   console.log(defLength[0])
+  console.log(noun)
   });
 });
 
-function displayDef(defLength, userInput, def) {
+function displayDef(defLength, userInput, def, noun) {
   console.log(defLength[0])
   var defEntry = $("<div>");
   var h5 = $("<h5>");

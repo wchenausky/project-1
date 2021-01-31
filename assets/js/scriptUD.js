@@ -40,7 +40,7 @@ function searchUD(userInput) {
  
 
 $("#startSearch").click(function(e) {
-    e.preventDefault();
+    e.preventDefault();  
     $("#pageOne").addClass("fade-out");
     setTimeout(function() {
       $("#pageOne").hide();

@@ -1,3 +1,21 @@
+var results = 2;
+
+function renderUD(r, word) {
+  console.log(r);
+  console.log(r.list[0].definition);
+  var newH4 = $("<h4>");
+  var w = word.toUpperCase();
+  $(newH4).text(w);
+  $("#urbanDictionary").append(newH4);
+  for (var i = 0; i < results + 1; i++) {
+    var udDefinition = r.list[i].definition;
+    var newH5 = $("<h5>");
+    $(newH5).text((i+1) + ": " + udDefinition);
+    $("#urbanDictionary").append(newH5);
+  }
+}
+ 
+
 $("#startSearch").click(function(e) {
     e.preventDefault();
     $("#pageOne").addClass("fade-out");
@@ -25,7 +43,7 @@ $("#startSearch").click(function(e) {
       },
     };
     $.ajax(settings).done(function (response) {
-      console.log(response);
+      renderUD(response, userInput);
     });
   });
 
@@ -34,4 +52,30 @@ $("#startSearch").click(function(e) {
       event.preventDefault();
       $("#startSearch").click();
     }
+  });
+
+  $("#startSearchTwo").click(function(e) {
+    e.preventDefault();
+    $("#urbanDictionary").empty();
+    var userInput = $("#textarea2").val().trim();
+    var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 
+    console.log(q);
+    const settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": `${q}`,
+      
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-key": "a81dca7536msh6bc3d3699a87596p1ae89bjsn3961fc20945c",
+        "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
+      },
+      error: function(){
+        alert("Please enter valid search term!");
+        location.reload();
+      },
+    };
+    $.ajax(settings).done(function (response) {
+      renderUD(response, userInput);
+    });
   });

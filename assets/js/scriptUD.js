@@ -7,6 +7,8 @@ function renderUD(r, word) {
   var w = word.toUpperCase();
   $(newH5).text(w);
   // $(newH5).addClass("NEW CLASS HERE");
+  // var userInput = $("#textarea1").val().trim();
+  //   localStorage.setItem("history",userInput);
   $("#urbanDictionary").append(newH4);
   for (var i = 0; i < results + 1; i++) {
     var udDefinition = r.list[i].definition;
@@ -67,4 +69,12 @@ $("#startSearch").click(function(e) {
     searchUD(userInput);
     $("#textarea2").val("");
     $("#labelTwo").removeClass("active");
-  });
+
+    // localStorage.setItem("history",JSON.stringify(userInput));
+    // console.log("this function works");
+    // var savedHistory = JSON.parse(localStorage.getItem(history));
+    // $(".history").val(savedHistory);
+      
+    });
+    
+  

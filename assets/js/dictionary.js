@@ -25,12 +25,14 @@ function displayDef(defLength, userInput, def, noun) {
   console.log(defLength[0])
   var defEntry = $("<div>");
   var h5 = $("<h5>");
-  h5.text(userInput);
+   $(h5).addClass("dictH5");
+  h5.text(userInput + "; " + noun);
   $(defEntry).append(h5);
   $("#dictionary").append(defEntry);
   for (var i =0; i < defLength; i++){
     var para = $("<p>")
-    para.text((i+1) + ": " + def[i] )
+    $(para).addClass("dictPara");
+    para.text((i+1) + ": "+ def[i] )
   
     $(defEntry).append(para);
     //console.log(response[0].shortdef[i]);

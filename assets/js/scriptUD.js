@@ -6,13 +6,13 @@ function renderUD(r, word) {
   var newH5 = $("<h5>");
   var w = word.toUpperCase();
   $(newH5).text(w);
-  // $(newH5).addClass("NEW CLASS HERE");
-  $("#urbanDictionary").append(newH4);
+  $(newH5).addClass("dictH5");
+  $("#urbanDictionary").append(newH5);
   for (var i = 0; i < results + 1; i++) {
     var udDefinition = r.list[i].definition;
     var newP = $("<p>");
     $(newP).text((i+1) + ": " + udDefinition);
-     // $(newP).addClass("NEW CLASS HERE");
+    $(newP).addClass("dictPara");
     $("#urbanDictionary").append(newP);
   }
 }

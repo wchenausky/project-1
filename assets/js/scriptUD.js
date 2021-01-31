@@ -8,8 +8,10 @@ function renderUD(r, word) {
   $(newH5).text(w);
   $(newH5).addClass("dictH5");
   $("#urbanDictionary").append(newH5);
+
   var userInput = $("#textarea1").val().trim();
   localStorage.setItem("history",userInput);
+
   for (var i = 0; i < results + 1; i++) {
     var udDefinition = r.list[i].definition;
     var newP = $("<p>");

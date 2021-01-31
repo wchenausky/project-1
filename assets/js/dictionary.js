@@ -1,27 +1,9 @@
-$("#startSearch").click(function (e) {
-  e.preventDefault();
 
-  var userInput = $("#textarea1").val().trim();
 
-  var apiKEY = "72594bc0-4725-41da-8a59-a971cbb8960b";
-
-  var queryURL = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${userInput}?key=${apiKEY}`;
-
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-   var defLength = response[0].shortdef.length
-   var def = response[0].shortdef
-   var noun =response[0].fl
-  displayDef(defLength, userInput, def, noun)
-  console.log(response)
-  console.log(defLength[0])
-  console.log(noun)
-  });
-});
-
-function displayDef(defLength, userInput, def, noun) {
+function displayDef(userInput, response) {
+  var defLength = response[0].shortdef.length
+  var def = response[0].shortdef
+  var noun =response[0].fl
   console.log(defLength[0])
   var defEntry = $("<div>");
   var h5 = $("<h5>");
@@ -41,3 +23,40 @@ function displayDef(defLength, userInput, def, noun) {
 
    };
 };
+
+$("#startSearch").click(function (e) {
+  e.preventDefault();
+
+  var userInput = $("#textarea1").val().trim();
+
+  var apiKEY = "72594bc0-4725-41da-8a59-a971cbb8960b";
+
+  var queryURL = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${userInput}?key=${apiKEY}`;
+
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then(function (response) {
+  displayDef(userInput, response)
+  });
+});
+
+$("#startSearchTwo").click(function (e) {
+  e.preventDefault();
+
+  var userInput = $("#textarea2").val().trim();
+
+  var apiKEY = "72594bc0-4725-41da-8a59-a971cbb8960b";
+
+  var queryURL = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${userInput}?key=${apiKEY}`;
+
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then(function (response) {
+   $("#dictionary").empty()
+  displayDef(userInput, response)
+  $("#textarea2").val("");
+    $("#labelTwo").removeClass("active");
+  });
+});

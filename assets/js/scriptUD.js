@@ -8,10 +8,8 @@ function renderUD(r, word) {
   $(newH5).text(w);
   $(newH5).addClass("dictH5");
   $("#urbanDictionary").append(newH5);
-
   var userInput = $("#textarea1").val().trim();
   localStorage.setItem("history",userInput);
-
   for (var i = 0; i < results + 1; i++) {
     var udDefinition = r.list[i].definition;
     var newP = $("<p>");
@@ -28,7 +26,6 @@ function searchUD(userInput) {
     "async": true,
     "crossDomain": true,
     "url": `${q}`,
-    
     "method": "GET",
     "headers": {
       "x-rapidapi-key": "a81dca7536msh6bc3d3699a87596p1ae89bjsn3961fc20945c",
@@ -44,7 +41,6 @@ function searchUD(userInput) {
   });
 }
  
-
 $("#startSearch").click(function(e) {
     e.preventDefault();  
     $("#pageOne").addClass("fade-out");
@@ -68,15 +64,5 @@ $("#startSearch").click(function(e) {
     e.preventDefault();
     $("#urbanDictionary").empty();
     var userInput = $("#textarea2").val().trim();
-    searchUD(userInput);
-    $("#textarea2").val("");
-    $("#labelTwo").removeClass("active");
-
-    // localStorage.setItem("history",JSON.stringify(userInput));
-    // console.log("this function works");
-    // var savedHistory = JSON.parse(localStorage.getItem(history));
-    // $(".history").val(savedHistory);
-      
+    searchUD(userInput);;
     });
-    
-  

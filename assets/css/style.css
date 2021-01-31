@@ -13,6 +13,7 @@ p {
     padding: 30px;
     font-family: 'Montserrat';
     text-align: center;
+    font-size: 25px;
 }
 
 #wordOfDay {
@@ -42,6 +43,12 @@ nav {
 #pageTwo {
     margin-top: 20px;
     margin-left: 15px;
+}
+
+
+li {
+    padding: 40px;
+    font-size: 40px;
 }
 
 h5 {

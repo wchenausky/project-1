@@ -14,6 +14,29 @@ function renderUD(r, word) {
     $("#urbanDictionary").append(newH5);
   }
 }
+
+function searchUD(userInput) {
+  var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 
+  console.log(q);
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": `${q}`,
+    
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "a81dca7536msh6bc3d3699a87596p1ae89bjsn3961fc20945c",
+      "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
+    },
+    error: function(){
+      alert("Please enter valid search term!");
+      location.reload();
+    },
+  };
+  $.ajax(settings).done(function (response) {
+    renderUD(response, userInput);
+  });
+}
  
 
 $("#startSearch").click(function(e) {
@@ -25,26 +48,7 @@ $("#startSearch").click(function(e) {
       $("#pageTwo").removeClass("fade-out");
     }, 1000);
     var userInput = $("#textarea1").val().trim();
-    var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 
-    console.log(q);
-    const settings = {
-      "async": true,
-      "crossDomain": true,
-      "url": `${q}`,
-      
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-key": "a81dca7536msh6bc3d3699a87596p1ae89bjsn3961fc20945c",
-        "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
-      },
-      error: function(){
-        alert("Please enter valid search term!");
-        location.reload();
-      },
-    };
-    $.ajax(settings).done(function (response) {
-      renderUD(response, userInput);
-    });
+    searchUD(userInput);
   });
 
   $("#textarea1").keypress(function(event) {
@@ -58,24 +62,7 @@ $("#startSearch").click(function(e) {
     e.preventDefault();
     $("#urbanDictionary").empty();
     var userInput = $("#textarea2").val().trim();
-    var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 
-    console.log(q);
-    const settings = {
-      "async": true,
-      "crossDomain": true,
-      "url": `${q}`,
-      
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-key": "a81dca7536msh6bc3d3699a87596p1ae89bjsn3961fc20945c",
-        "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
-      },
-      error: function(){
-        alert("Please enter valid search term!");
-        location.reload();
-      },
-    };
-    $.ajax(settings).done(function (response) {
-      renderUD(response, userInput);
-    });
+    searchUD(userInput);
+    $("#textarea2").val("");
+    $("#labelTwo").removeClass("active");
   });

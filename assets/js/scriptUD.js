@@ -1,5 +1,5 @@
 $("#startSearch").click(function(e) {
-    e.preventDefault();
+    e.preventDefault();  
     $("#pageOne").addClass("fade-out");
     setTimeout(function() {
       $("#pageOne").hide();
@@ -7,6 +7,7 @@ $("#startSearch").click(function(e) {
       $("#pageTwo").removeClass("fade-out");
     }, 1000);
     var userInput = $("#textarea1").val().trim();
+    localStorage.setItem("history",userInput);
     var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 
     console.log(q);
     const settings = {
@@ -35,3 +36,11 @@ $("#startSearch").click(function(e) {
       $("#startSearch").click();
     }
   });
+  $(".secondSearch").on("click",function(searchHistory){
+    searchHistory.preventDefault();
+    var userInput2=$("#textarea2").val().trim();
+    localStorage.setItem("history",userInput2);
+    console.log("this function works");
+    $(".history").val(localStorage.getItem(history));
+  });
+  searchHistory();

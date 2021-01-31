@@ -7,7 +7,7 @@ function renderUD(r, word) {
   var w = word.toUpperCase();
   $(newH5).text(w);
   $(newH5).addClass("dictH5");
-  $("#urbanDictionary").append(newH4);
+  $("#urbanDictionary").append(newH5);
   for (var i = 0; i < results + 1; i++) {
     var udDefinition = r.list[i].definition;
     var newP = $("<p>");

@@ -44,3 +44,7 @@ nav {
     margin-left: 15px;
 }
 
+h5 {
+    text-transform: capitalize;
+}
+

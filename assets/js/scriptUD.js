@@ -3,15 +3,17 @@ var results = 2;
 function renderUD(r, word) {
   console.log(r);
   console.log(r.list[0].definition);
-  var newH4 = $("<h4>");
+  var newH5 = $("<h5>");
   var w = word.toUpperCase();
-  $(newH4).text(w);
+  $(newH5).text(w);
+  // $(newH5).addClass("NEW CLASS HERE");
   $("#urbanDictionary").append(newH4);
   for (var i = 0; i < results + 1; i++) {
     var udDefinition = r.list[i].definition;
-    var newH5 = $("<h5>");
-    $(newH5).text((i+1) + ": " + udDefinition);
-    $("#urbanDictionary").append(newH5);
+    var newP = $("<p>");
+    $(newP).text((i+1) + ": " + udDefinition);
+     // $(newP).addClass("NEW CLASS HERE");
+    $("#urbanDictionary").append(newP);
   }
 }
 

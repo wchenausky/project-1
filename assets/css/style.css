@@ -45,8 +45,13 @@ nav {
     margin-left: 15px;
 }
 
+
 li {
     padding: 40px;
     font-size: 40px;
+}
+
+h5 {
+    text-transform: capitalize;
 }
 

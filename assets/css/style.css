@@ -30,6 +30,12 @@ nav {
     border-radius: 4px;
 }
 
+.searchCard {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
 .container {
     opacity: 1;
     transition: 1s;
@@ -51,14 +57,13 @@ li {
     font-size: 40px;
 }
 
-h5 {
-    text-transform: capitalize;
-}
-
 .dictH5 {
-
+    font-size: 30px; 
+    margin-right: 10px;
+    padding: 10px;
+    text-transform: uppercase;
 }
 
 .dictPara {
-
+font-size: 20px;
 }

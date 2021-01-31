@@ -23,11 +23,13 @@ function displayDef(defLength, userInput, def) {
   
   var defEntry = $("<div>");
   var h5 = $("<h5>");
+   $(h5).addClass("dictH5");
   h5.text(userInput);
   $(defEntry).append(h5);
   $("#dictionary").append(defEntry);
   for (var i =0; i < defLength; i++){
     var para = $("<p>")
+    $(para).addClass("dictPara");
     para.text("1: "+ def[i] )
   
     $(defEntry).append(para);

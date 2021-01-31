@@ -1,4 +1,4 @@
-var wordOptions = ["marisa1", "marisa2", "marisa3", "william1", "william2", "william3", "nick1", "nick2", "nick3", "shu1", "shu2", "shu3"];
+var wordOptions = ["Bamboozle", "Durk", "Knocking", "Tight", "Dope", "Ratchet", "nick1", "nick2", "nick3", "shu1", "shu2", "shu3"];
 // var randWord = [];
 var displayWord = [];
 
@@ -27,7 +27,6 @@ function init() {
       "async": true,
       "crossDomain": true,
       "url": `${q}`,
-      
       "method": "GET",
       "headers": {
         "x-rapidapi-key": "a81dca7536msh6bc3d3699a87596p1ae89bjsn3961fc20945c",

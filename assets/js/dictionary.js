@@ -7,6 +7,11 @@ function displayDef(userInput, response) {
    $(h5).addClass("dictH5");
   h5.text(userInput + "; " + noun);
   $(defEntry).append(h5);
+  var newP = $("<p>");
+  var hw = response[0].hwi.hw;
+  var mw = response[0].hwi.prs[0].mw;
+  $(newP).text(hw + "|" + mw);
+  $(defEntry).append(newP);
   $("#dictionary").append(defEntry);
   for (var i =0; i < defLength; i++){
     var para = $("<p>")
@@ -23,6 +28,7 @@ function searchD(userInput) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
+    console.log(response);
     displayDef(userInput, response)
   });
 };

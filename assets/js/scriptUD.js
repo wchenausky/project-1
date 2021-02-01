@@ -6,13 +6,17 @@ function renderUD(r, word) {
   var newH5 = $("<h5>");
   var w = word.toUpperCase();
   $(newH5).text(w);
-  // $(newH5).addClass("NEW CLASS HERE");
-  $("#urbanDictionary").append(newH4);
+
+  $(newH5).addClass("dictH5");
+  $("#urbanDictionary").append(newH5);
+  var userInput = $("#textarea1").val().trim();
+  localStorage.setItem("history",userInput);
+
   for (var i = 0; i < results + 1; i++) {
     var udDefinition = r.list[i].definition;
     var newP = $("<p>");
     $(newP).text((i+1) + ": " + udDefinition);
-     // $(newP).addClass("NEW CLASS HERE");
+    $(newP).addClass("dictPara");
     $("#urbanDictionary").append(newP);
   }
 }
@@ -29,7 +33,6 @@ function searchUD(userInput) {
     "async": true,
     "crossDomain": true,
     "url": `${q}`,
-    
     "method": "GET",
     "headers": {
       "x-rapidapi-key": "a81dca7536msh6bc3d3699a87596p1ae89bjsn3961fc20945c",
@@ -45,7 +48,6 @@ function searchUD(userInput) {
   });
 }
  
-
 $("#startSearch").click(function(e) {
     e.preventDefault();  
     $("#pageOne").addClass("fade-out");
@@ -77,9 +79,5 @@ $("#startSearch").click(function(e) {
     var userInput = $("#textarea2").val().trim();
     localStorage.setItem("history",userInput);
     searchUD(userInput);
-    $("#textarea2").val("");
     $("#labelTwo").removeClass("active");
-  
-    });
-    
-  
+

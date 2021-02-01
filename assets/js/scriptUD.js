@@ -57,8 +57,8 @@ $("#startSearch").click(function(e) {
       $("#pageTwo").removeClass("fade-out");
     }, 1000);
     var savedHistory = localStorage.getItem("history"); //57-63 local storage !Don't change!
-     var userInput = $("#textarea1").val().trim();
-     var a=$("<li>")
+    var userInput = $("#textarea1").val().trim();
+    var a=$("<li>")
     a.text(savedHistory)
     a.addClass("info")
     $("#history").prepend(a)
@@ -80,4 +80,4 @@ $("#startSearch").click(function(e) {
     localStorage.setItem("history",userInput);
     searchUD(userInput);
     $("#labelTwo").removeClass("active");
-
+  });

@@ -79,7 +79,6 @@ $("#startSearch").click(function(e) {
     searchUD(userInput);
     $("#textarea2").val("");
     $("#labelTwo").removeClass("active");
-  
     });
     
   

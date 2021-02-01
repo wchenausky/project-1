@@ -82,7 +82,16 @@ font-size: 20px;
     font-weight: 400;
 }
 
+.info {
+    font-size: 30px;
+    font-weight: 400;
+    text-align: left;
+    padding: 0;
+    color :rgb(3, 39, 44);
+}
+
 .history {
     font-size: 20px;
     padding: 8px;
 }
+

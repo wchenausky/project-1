@@ -6,9 +6,9 @@ function renderUD(r, word) {
   var newH5 = $("<h5>");
   var w = word.toUpperCase();
   $(newH5).text(w);
+
   $(newH5).addClass("dictH5");
   $("#urbanDictionary").append(newH5);
-
   var userInput = $("#textarea1").val().trim();
   localStorage.setItem("history",userInput);
 
@@ -22,13 +22,17 @@ function renderUD(r, word) {
 }
 
 function searchUD(userInput) {
+  var savedHistory = localStorage.getItem("history");//21-25 local storage !Don't change!
+  var a=$("<li>")
+  a.text(savedHistory)
+  a.addClass("info")
+  $("#history").prepend(a) //Don't change 
   var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 
   console.log(q);
   const settings = {
     "async": true,
     "crossDomain": true,
     "url": `${q}`,
-    
     "method": "GET",
     "headers": {
       "x-rapidapi-key": "a81dca7536msh6bc3d3699a87596p1ae89bjsn3961fc20945c",
@@ -44,7 +48,6 @@ function searchUD(userInput) {
   });
 }
  
-
 $("#startSearch").click(function(e) {
     e.preventDefault();  
     $("#pageOne").addClass("fade-out");
@@ -53,7 +56,13 @@ $("#startSearch").click(function(e) {
       $("#pageTwo").show();
       $("#pageTwo").removeClass("fade-out");
     }, 1000);
-    var userInput = $("#textarea1").val().trim();
+    var savedHistory = localStorage.getItem("history"); //57-63 local storage !Don't change!
+     var userInput = $("#textarea1").val().trim();
+     var a=$("<li>")
+    a.text(savedHistory)
+    a.addClass("info")
+    $("#history").prepend(a)
+    localStorage.setItem("history",userInput);//Don't change 
     searchUD(userInput);
   });
 
@@ -68,15 +77,7 @@ $("#startSearch").click(function(e) {
     e.preventDefault();
     $("#urbanDictionary").empty();
     var userInput = $("#textarea2").val().trim();
+    localStorage.setItem("history",userInput);
     searchUD(userInput);
-    $("#textarea2").val("");
     $("#labelTwo").removeClass("active");
 
-    // localStorage.setItem("history",JSON.stringify(userInput));
-    // console.log("this function works");
-    // var savedHistory = JSON.parse(localStorage.getItem(history));
-    // $(".history").val(savedHistory);
-      
-    });
-    
-  

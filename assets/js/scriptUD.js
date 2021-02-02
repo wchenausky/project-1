@@ -81,3 +81,15 @@ $("#startSearch").click(function(e) {
     searchUD(userInput);
     $("#labelTwo").removeClass("active");
   });
+
+
+
+
+
+
+  $("#history").on("click", "li", function() {
+    var returnWord = $(this).text();
+    $("#urbanDictionary").empty();
+    searchUD(returnWord);
+    // console.log(returnWord)
+});

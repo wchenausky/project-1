@@ -125,3 +125,10 @@ $("#startSearchTwo").click(function (e) {
   $("#textarea2").val("");
   $("#labelTwo").removeClass("active");
 });
+
+$("#history").on("click", "li", function() {
+  var returnWord = $(this).text();
+  $("#dictionary").empty();
+  searchD(returnWord);
+  // console.log(returnWord)
+});

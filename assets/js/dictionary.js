@@ -10,7 +10,7 @@ function displayDef(userInput, response,) {
   $(h5).attr("id", "icon");
   //creates h5 to display user input word
    $(h5).addClass("dictH5");
-  h5.text(userInput + "; " + wordClass);
+  h5.text(userInput + "; " + wordClass + " ");
   $(defEntry).append(h5);
   //creates paragraph to display user input definition
   var newP = $("<p>");

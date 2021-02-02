@@ -6,16 +6,17 @@ function renderUD(r, word) {
   var newH5 = $("<h5>");
   var w = word.toUpperCase();
   $(newH5).text(w);
-
   $(newH5).addClass("dictH5");
   $("#urbanDictionary").append(newH5);
   var userInput = $("#textarea1").val().trim();
   localStorage.setItem("history",userInput);
-
   for (var i = 0; i < results + 1; i++) {
     var udDefinition = r.list[i].definition;
+    udDefinitionSTR = JSON.stringify(udDefinition);
+    var newDef = udDefinitionSTR.replace(/\\r\\n/g, '<br>');
+    console.log(newDef);
     var newP = $("<p>");
-    $(newP).text((i+1) + ": " + udDefinition);
+    $(newP).html((i+1) + ": " + "<br>"  + newDef);
     $(newP).addClass("dictPara");
     $("#urbanDictionary").append(newP);
   }
@@ -46,6 +47,33 @@ function searchUD(userInput) {
   $.ajax(settings).done(function (response) {
     renderUD(response, userInput);
   });
+}
+
+function kmpSearch(pattern, text) {
+  if (pattern.length == 0)
+    return 0; 
+
+  var lsp = [0]; 
+  for (var i = 1; i < pattern.length; i++) {
+    var j = lsp[i - 1]; 
+    while (j > 0 && pattern.charAt(i) != pattern.charAt(j))
+      j = lsp[j - 1];
+    if (pattern.charAt(i) == pattern.charAt(j))
+      j++;
+    lsp.push(j);
+  }
+
+  var j = 0;
+  for (var i = 0; i < text.length; i++) {
+    while (j > 0 && text.charAt(i) != pattern.charAt(j))
+      j = lsp[j - 1]; 
+    if (text.charAt(i) == pattern.charAt(j)) {
+      j++; 
+      if (j == pattern.length)
+        return i - (j - 1);
+    }
+  }
+  return -1; // Not found
 }
  
 $("#startSearch").click(function(e) {
@@ -81,11 +109,6 @@ $("#startSearch").click(function(e) {
     searchUD(userInput);
     $("#labelTwo").removeClass("active");
   });
-
-
-
-
-
 
   $("#history").on("click", "li", function() {
     var returnWord = $(this).text();

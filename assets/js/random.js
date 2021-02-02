@@ -13,20 +13,21 @@ function init() {
 };
 
     $("#wordOfDay").click(function() {
-        var a = $(this)
+        var a = $(this).text();
+        console.log(a);
         $("#pageOne").addClass("fade-out");
     setTimeout(function() {
       $("#pageOne").hide();
       $("#pageTwo").show();
       $("#pageTwo").removeClass("fade-out");
     }, 1000);
-    searchUD();
-    searchD();
+    searchUD(a);
+    searchD(a);
   });
 
   function renderUD(r, word) {
-    console.log(r);
-    console.log(r.list[0].definition);
+    // console.log(r);
+    // console.log(r.list[0].definition);
     var newH5 = $("<h5>");
     var w = word.toUpperCase();
     $(newH5).text(w);
@@ -58,7 +59,8 @@ function init() {
       },
     };
     $.ajax(settings).done(function (response) {
-      console.log(response);
+      console.log(userInput);
+      renderUD(response, userInput);
     });
   };
   

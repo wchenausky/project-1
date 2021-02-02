@@ -6,16 +6,17 @@ function renderUD(r, word) {
   var newH5 = $("<h5>");
   var w = word.toUpperCase();
   $(newH5).text(w);
-
   $(newH5).addClass("dictH5");
   $("#urbanDictionary").append(newH5);
   var userInput = $("#textarea1").val().trim();
   localStorage.setItem("history",userInput);
-
   for (var i = 0; i < results + 1; i++) {
     var udDefinition = r.list[i].definition;
+    udDefinitionSTR = JSON.stringify(udDefinition);
+    var newDef = udDefinitionSTR.replace(/\\r\\n/g, '<br>');
+    console.log(newDef);
     var newP = $("<p>");
-    $(newP).text((i+1) + ": " + udDefinition);
+    $(newP).html((i+1) + ": " + "<br>"  + newDef);
     $(newP).addClass("dictPara");
     $("#urbanDictionary").append(newP);
   }
@@ -47,6 +48,8 @@ function searchUD(userInput) {
     renderUD(response, userInput);
   });
 }
+
+
  
 $("#startSearch").click(function(e) {
     e.preventDefault();  
@@ -81,11 +84,6 @@ $("#startSearch").click(function(e) {
     searchUD(userInput);
     $("#labelTwo").removeClass("active");
   });
-
-
-
-
-
 
   $("#history").on("click", "li", function() {
     var returnWord = $(this).text();

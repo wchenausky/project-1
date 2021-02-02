@@ -81,3 +81,13 @@ $("#startSearch").click(function(e) {
     searchUD(userInput);
     $("#labelTwo").removeClass("active");
   });
+
+
+
+
+
+
+
+  $("#history").on("click", "li", function() {
+    searchUD($(this).text());
+});

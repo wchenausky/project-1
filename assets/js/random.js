@@ -20,6 +20,10 @@ function init() {
       $("#pageTwo").show();
       $("#pageTwo").removeClass("fade-out");
     }, 1000);
+    searchUD();
+    searchD();
+
+    function searchUD(userInput) {
     var userInput = ($(a).text()); 
     var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 
     console.log(q);
@@ -36,9 +40,7 @@ function init() {
     $.ajax(settings).done(function (response) {
       console.log(response);
     });
-    });
-
-
+  
     function searchD(userInput) {
       var apiKEY = "72594bc0-4725-41da-8a59-a971cbb8960b";
       var queryURL = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${userInput}?key=${apiKEY}`;
@@ -51,13 +53,10 @@ function init() {
       });
     };
 
-    $("#startSearch").click(function (e) {
-      e.preventDefault();
-      var userInput = $("#textarea1").val().trim();
-      searchD(userInput);
-    });
-
-
-
+    // $("#startSearch").click(function (e) {
+    //   e.preventDefault();
+    //   var userInput = $("#textarea1").val().trim();
+    //   searchD(userInput);
+    // });
 
 

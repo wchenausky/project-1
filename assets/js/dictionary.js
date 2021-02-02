@@ -1,5 +1,5 @@
 // function to display definition of user inputted word
-function displayDef(userInput, response) {
+function displayDef(userInput, response,) {
   // vars to grab info from api
   var defLength = response[0].shortdef.length
   var def = response[0].shortdef
@@ -7,6 +7,7 @@ function displayDef(userInput, response) {
   //creates div to display user input
   var defEntry = $("<div>");
   var h5 = $("<h5>");
+  $(h5).attr("id", "icon");
   //creates h5 to display user input word
    $(h5).addClass("dictH5");
   h5.text(userInput + "; " + wordClass);
@@ -34,13 +35,15 @@ function searchD(userInput) {
     method: "GET",
   }).then(function (response) {
     console.log(response);
-    displayDef(userInput, response)
-    playAudio(response);
+   var audioFileURL;
+    displayDef(userInput, response);
+    playAudio(response, audioFileURL);
+   
   });
 };
 
 //create var to grab first letter of user input
-function playAudio(response){
+function playAudio(response, audioFileURL){
   var subDirec = "";
   var file = response[0].hwi.prs[0].sound.audio;
   console.log(file)
@@ -102,12 +105,26 @@ x = 1;
 while(x = 0);
 
 // make audio var with the sound URL from the api
-  var audioFileURL = `https://media.merriam-webster.com/audio/prons/en/us/wav/${subDirec}/${file}.wav`
+  audioFileURL = `https://media.merriam-webster.com/audio/prons/en/us/wav/${subDirec}/${file}.wav`
   console.log(file.slice(0))
   console.log(audioFileURL)
+  var icon = $("<i>");
+  $(icon).addClass("small material-icons");
+  $(icon).html("play_circle_outline");
+  $(icon).attr("id", "audioPlayer");
+  $(icon).attr("data-URL", audioFileURL);
+  console.log(audioFileURL)
+  $(icon).attr("onclick", "playSound()");
+  $("#icon").append(icon);
 };
 
+// click function to play audio
+function playSound(){
+  var URL = $("#audioPlayer").attr("data-URL")
+new Audio(URL).play();
 
+console.log(URL)
+};
 
 
 

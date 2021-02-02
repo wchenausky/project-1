@@ -12,7 +12,7 @@ function renderUD(r, word) {
   localStorage.setItem("history",userInput);
   for (var i = 0; i < results + 1; i++) {
     var udDefinition = r.list[i].definition;
-    udDefinitionSTR = JSON.stringify(udDefinition);
+    var udDefinitionSTR = JSON.stringify(udDefinition);
     var newDef = udDefinitionSTR.replace(/\\r\\n/g, '<br>');
     console.log(newDef);
     var newP = $("<p>");

@@ -87,7 +87,9 @@ $("#startSearch").click(function(e) {
 
 
 
-
   $("#history").on("click", "li", function() {
-    searchUD($(this).text());
+    var returnWord = $(this).text();
+    $("#urbanDictionary").empty();
+    searchUD(returnWord);
+    // console.log(returnWord)
 });

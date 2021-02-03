@@ -26,6 +26,7 @@ function displayDef(userInput, response,) {
     $(defEntry).append(para);
    };
 };
+
 //function to grab api
 function searchD(userInput) {
   var apiKEY = "72594bc0-4725-41da-8a59-a971cbb8960b";

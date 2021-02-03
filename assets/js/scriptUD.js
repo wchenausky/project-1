@@ -24,10 +24,10 @@ function renderUD(r, word) {
 
 function searchUD(userInput) {
   var savedHistory = localStorage.getItem("history");//21-25 local storage !Don't change!
-  var a=$("<li>")
-  a.text(savedHistory)
-  a.addClass("info")
-  $("#history").prepend(a) //Don't change 
+  var a=$("<li>");
+  a.text(savedHistory);
+  a.addClass("info");
+  $("#history").prepend(a); //Don't change 
   var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 
   console.log(q);
   const settings = {
@@ -47,7 +47,7 @@ function searchUD(userInput) {
   $.ajax(settings).done(function (response) {
     renderUD(response, userInput);
   });
-}
+};
 
 
  
@@ -61,10 +61,10 @@ $("#startSearch").click(function(e) {
     }, 1000);
     var savedHistory = localStorage.getItem("history"); //57-63 local storage !Don't change!
     var userInput = $("#textarea1").val().trim();
-    var a=$("<li>")
-    a.text(savedHistory)
-    a.addClass("info")
-    $("#history").prepend(a)
+    var a=$("<li>");
+    a.text(savedHistory);
+    a.addClass("info");
+    $("#history").prepend(a);
     localStorage.setItem("history",userInput);//Don't change 
     searchUD(userInput);
   });
@@ -85,7 +85,8 @@ $("#startSearch").click(function(e) {
     $("#labelTwo").removeClass("active");
   });
 
-  $("#history").on("click", "li", function() {
+  $("#history").on("click", "li", function(e) {
+    e.preventDefault();
     var returnWord = $(this).text();
     $("#urbanDictionary").empty();
     searchUD(returnWord);

@@ -53,9 +53,7 @@ function searchUD(userInput) {  // add NEW !!!! u should copy paste this whole f
       $("#history").append(a)
      }
   }     // ........NEW !!! 3.
-
   var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 
-  console.log(q);
   const settings = {
     "async": true,
     "crossDomain": true,
@@ -73,7 +71,7 @@ function searchUD(userInput) {  // add NEW !!!! u should copy paste this whole f
   $.ajax(settings).done(function (response) {
     renderUD(response, userInput);
   });
-}
+};
 
 
  
@@ -104,7 +102,8 @@ $("#startSearch").click(function(e) {
     $("#labelTwo").removeClass("active"); // NEW !!! 6.
   });
 
-  $("#history").on("click", "li", function() {
+  $("#history").on("click", "li", function(e) {
+    e.preventDefault();
     var returnWord = $(this).text();
     $("#urbanDictionary").empty();
     searchUD(returnWord);

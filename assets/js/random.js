@@ -1,20 +1,15 @@
 var wordOptions = ["Bamboozle", "Durk", "Knocking", "Tight", "Dope", "Ratchet", "Poop", "Novel", "Bucket", "lol", "Like", "Twit"];
-// var randWord = [];
 var displayWord = [];
-
-init();
 
 function init() {
     var i = Math.floor(Math.random() * wordOptions.length);
     var newItem = $("<li>");
     newItem.text(wordOptions[i]);
     $("#wordOfDay").append(newItem);
-    console.log(wordOptions[i])
 };
 
     $("#wordOfDay").click(function() {
         var a = $(this).text();
-        console.log(a);
         $("#pageOne").addClass("fade-out");
     setTimeout(function() {
       $("#pageOne").hide();
@@ -26,8 +21,6 @@ function init() {
   });
 
   function renderUD(r, word) {
-    // console.log(r);
-    // console.log(r.list[0].definition);
     var newH5 = $("<h5>");
     var w = word.toUpperCase();
     $(newH5).text(w);
@@ -59,7 +52,6 @@ function init() {
       },
     };
     $.ajax(settings).done(function (response) {
-      console.log(userInput);
       renderUD(response, userInput);
     });
   };
@@ -71,7 +63,6 @@ function init() {
         url: queryURL,
         method: "GET",
       }).then(function (response) {
-        console.log(response);
         displayDef(userInput, response)
       });
     };
@@ -98,9 +89,7 @@ function init() {
         $(defEntry).append(para);
        };
     };
-    // $("#startSearch").click(function (e) {
-    //   e.preventDefault();
-    //   var userInput = $("#textarea1").val().trim();
-    //   searchD(userInput);
-    // });
+
+    init();
+
 

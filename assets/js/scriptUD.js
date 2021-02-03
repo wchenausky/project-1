@@ -74,6 +74,8 @@ function searchUD(userInput) {  // add NEW !!!! u should copy paste this whole f
     renderUD(response, userInput);
   });
 }
+
+
  
 $("#startSearch").click(function(e) {
     e.preventDefault();  
@@ -106,5 +108,4 @@ $("#startSearch").click(function(e) {
     var returnWord = $(this).text();
     $("#urbanDictionary").empty();
     searchUD(returnWord);
-    // console.log(returnWord)
 });

@@ -1,7 +1,7 @@
-$("#startSearch").click(function(e) {
-  e.preventDefault();  
+$("#startSearch").click(function (e) {
+  e.preventDefault();
   $("#pageOne").addClass("fade-out");
-  setTimeout(function() {
+  setTimeout(function () {
     $("#pageOne").hide();
     $("#pageTwo").show();
     $("#pageTwo").removeClass("fade-out");
@@ -13,21 +13,21 @@ $("#startSearch").click(function(e) {
   storage(userInput);
 });
 
-$("#textarea1").keypress(function(event) {
+$("#textarea1").keypress(function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     $("#startSearch").click();
   }
 });
 
-$("#textarea2").keypress(function(event) {
+$("#textarea2").keypress(function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     $("#startSearchTwo").click();
   }
 });
 
-$("#startSearchTwo").click(function(e) {
+$("#startSearchTwo").click(function (e) {
   e.preventDefault();
   var userInput = $("#textarea2").val().trim();
   $("#urbanDictionary").empty();
@@ -40,7 +40,7 @@ $("#startSearchTwo").click(function(e) {
   storage(userInput);
 });
 
-$("#history").on("click", "li", function(e) {
+$("#history").on("click", "li", function (e) {
   var returnWord = $(this).text();
   $("#urbanDictionary").empty();
   $("#dictionary").empty();
@@ -49,17 +49,23 @@ $("#history").on("click", "li", function(e) {
   storage(returnWord);
 });
 
-$("#wordOfDay").click(function() {
+$("#wordOfDay").click(function () {
   var a = $(this).text();
   $("#pageOne").addClass("fade-out");
-  setTimeout(function() {
-  $("#pageOne").hide();
-  $("#pageTwo").show();
-  $("#pageTwo").removeClass("fade-out");
+  setTimeout(function () {
+    $("#pageOne").hide();
+    $("#pageTwo").show();
+    $("#pageTwo").removeClass("fade-out");
   }, 1000);
   searchUD(a);
   searchD(a);
   storage(a);
-  });
+});
+
+$("#clearHistory").click(function(e) {
+  e.preventDefault();
+  localStorage.clear();
+  $("#history").empty();
+});
 
 init();

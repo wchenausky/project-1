@@ -153,7 +153,12 @@ function storage(userInput) {
     renderHistory(historyArray);
   } else {
     if ($.inArray(u, savedHistory) != -1) {
+      savedHistory = arrayRemove(savedHistory, u);
       pushSavedHistory(savedHistory, historyArray);
+      historyArray.push(u);
+      console.log(historyArray)
+      localStorage.removeItem("history");
+      localStorage.setItem("history", JSON.stringify(historyArray));
       checkLength(historyArray);
       renderHistory(historyArray);
     } else {
@@ -166,6 +171,12 @@ function storage(userInput) {
     }
   }
 };
+
+function arrayRemove(arr, value) {
+  return arr.filter(function(ele) {
+    return ele != value;
+  })
+}
 
 function checkLength(arr) {
   if (arr.length > 5) {

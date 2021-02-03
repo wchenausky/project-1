@@ -23,7 +23,7 @@ In this project,our group is going to build a responsive application where users
 * W3school
 * API
 * Node
-* 
+* Materialize
 
 ## User story:
 Slang! It makes language professors crazy and helps the rest of us express ourselves more colorfully. One of the coolest things (and most annoying for language learners) about slang is that it is ever changing. The meanings of slang words evolve over time to reflect the values and attitudes of the culture, and sometime slang gives standard words new meaning. 

@@ -27,15 +27,35 @@ function renderUD(r, word) {
   }
 }
 
-
 function searchUD(userInput) {
   var savedHistory = localStorage.getItem("history");//21-25 local storage !Don't change!
-  var a = $("<li>");
-  a.text(savedHistory);
-  a.addClass("info");
-  $("#history").prepend(a); //Don't change 
+  var savedHistory = JSON.parse(localStorage.getItem("history")); // NEW !!!.....
+  historyArray=savedHistory;     
+  $("#history").empty();  
+  if (savedHistory !== null){   //if local storage is not empty 
+    historyArray.push(userInput);
+    localStorage.setItem("history",JSON.stringify(historyArray));
+     for (var i=1;i<6;i++){
+      j=historyArray.length-i
+      var a=$("<li>")
+      a.text(historyArray[j])
+      a.addClass("info")
+      $("#history").append(a)  
+     }
+  }
+  else {     //if its  empty
+    var historyArray =[];
+    historyArray.push(userInput);
+    localStorage.setItem("history",JSON.stringify(historyArray));
+     for (var i=1;i<6;i++){
+      j=historyArray.length-i
+      var a=$("<li>")
+      a.text(historyArray[j])
+      a.addClass("info")
+      $("#history").append(a)
+     }
+  }     // ........NEW !!! 3.
   var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`;
-  console.log(q);
   const settings = {
     "async": true,
     "crossDomain": true,

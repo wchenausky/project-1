@@ -1,5 +1,4 @@
 var wordOptions = ["Bamboozle", "Durk", "Knocking", "Tight", "Dope", "Ratchet", "Poop", "Novel", "Bucket", "lol", "Like", "Twit"];
-// var randWord = [];
 var displayWord = [];
 var results = 2;
 
@@ -16,45 +15,18 @@ function renderUD(r, word) {
   $(newH5).text(w);
   $(newH5).addClass("dictH5");
   $("#urbanDictionary").append(newH5);
-  var userInput = $("#textarea1").val().trim();
-  localStorage.setItem("history", userInput);
   for (var i = 0; i < results + 1; i++) {
     var udDefinition = r.list[i].definition;
+    var udDefinitionSTR = JSON.stringify(udDefinition);
+    var newDef = udDefinitionSTR.replace(/\\r\\n/g, '<br>');
     var newP = $("<p>");
-    $(newP).text((i + 1) + ": " + udDefinition);
+    $(newP).html((i + 1) + ": " + "<br>" + newDef);
     $(newP).addClass("dictPara");
     $("#urbanDictionary").append(newP);
   }
 }
 
 function searchUD(userInput) {
-  var savedHistory = localStorage.getItem("history");//21-25 local storage !Don't change!
-  var savedHistory = JSON.parse(localStorage.getItem("history")); // NEW !!!.....
-  historyArray=savedHistory;     
-  $("#history").empty();  
-  if (savedHistory !== null){   //if local storage is not empty 
-    historyArray.push(userInput);
-    localStorage.setItem("history",JSON.stringify(historyArray));
-     for (var i=1;i<6;i++){
-      j=historyArray.length-i
-      var a=$("<li>")
-      a.text(historyArray[j])
-      a.addClass("info")
-      $("#history").append(a)  
-     }
-  }
-  else {     //if its  empty
-    var historyArray =[];
-    historyArray.push(userInput);
-    localStorage.setItem("history",JSON.stringify(historyArray));
-     for (var i=1;i<6;i++){
-      j=historyArray.length-i
-      var a=$("<li>")
-      a.text(historyArray[j])
-      a.addClass("info")
-      $("#history").append(a)
-     }
-  }     // ........NEW !!! 3.
   var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`;
   const settings = {
     "async": true,
@@ -125,7 +97,7 @@ function playAudio(response, audioFileURL) {
   var file = response[0].hwi.prs[0].sound.audio;
   var firstThree = "";
   var gg = firstThree.slice(0, 2)
-  var specialCharacters = ["@","%","+","\\",",","/","'","!","#","$","^","?",":",",",")","(","}","{","]","[","~","-","_",".",];
+  var specialCharacters = ["@", "%", "+", "\\", ",", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", ".",];
   for (var i = 0; i < 3; i++) {
     var char = file.charAt(i);
     firstThree += char;
@@ -171,22 +143,50 @@ function playSound() {
   new Audio(URL).play();
 };
 
-function renderUD(r, word) {
-  var newH5 = $("<h5>");
-  var w = word.toUpperCase();
-  $(newH5).text(w);
-  $(newH5).addClass("dictH5");
-  $("#urbanDictionary").append(newH5);
-  var userInput = $("#textarea1").val().trim();
-  localStorage.setItem("history", userInput);
-  for (var i = 0; i < results + 1; i++) {
-    var udDefinition = r.list[i].definition;
-    var udDefinitionSTR = JSON.stringify(udDefinition);
-    var newDef = udDefinitionSTR.replace(/\\r\\n/g, '<br>');
-    var newP = $("<p>");
-    $(newP).html((i + 1) + ": " + "<br>" + newDef);
-    $(newP).addClass("dictPara");
-    $("#urbanDictionary").append(newP);
+function storage(userInput) {
+  var u = userInput.toUpperCase();
+  var savedHistory = JSON.parse(localStorage.getItem("history"));
+  var historyArray = [];
+  if (savedHistory === null) {
+    historyArray.push(u);
+    localStorage.setItem("history", JSON.stringify(historyArray));
+    renderHistory(historyArray);
+  } else {
+    if ($.inArray(u, savedHistory) != -1) {
+      pushSavedHistory(savedHistory, historyArray);
+      checkLength(historyArray);
+      renderHistory(historyArray);
+    } else {
+      pushSavedHistory(savedHistory, historyArray);
+      historyArray.push(u);
+      localStorage.removeItem("history");
+      localStorage.setItem("history", JSON.stringify(historyArray));
+      checkLength(historyArray);
+      renderHistory(historyArray);
+    }
   }
-}
+};
+
+function checkLength(arr) {
+  if (arr.length > 5) {
+    arr.shift();
+  }
+};
+
+function pushSavedHistory(arr, rS) {
+  for (var i = 0; i < arr.length; i++) {
+    rS.push(arr[i]);
+  }
+};
+
+function renderHistory(arr) {
+  $("#history").empty();
+  for (var i = 0; i < arr.length; i++) {
+    var a = $("<li>");
+    a.text(arr[i]);
+    a.addClass("info");
+    $("#history").prepend(a);
+  }
+};
+
 

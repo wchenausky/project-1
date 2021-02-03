@@ -14,12 +14,20 @@ $("#startSearch").click(function(e) {
   $("#history").prepend(a);
   localStorage.setItem("history",userInput);//Don't change 
   searchUD(userInput);
+  searchD(userInput);
 });
 
 $("#textarea1").keypress(function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     $("#startSearch").click();
+  }
+});
+
+$("#textarea2").keypress(function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    $("#startSearchTwo").click();
   }
 });
 

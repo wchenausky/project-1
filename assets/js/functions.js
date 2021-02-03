@@ -8,12 +8,9 @@ function init() {
   var newItem = $("<li>");
   newItem.text(wordOptions[i]);
   $("#wordOfDay").append(newItem);
-  console.log(wordOptions[i])
 };
 
 function renderUD(r, word) {
-  // console.log(r);
-  // console.log(r.list[0].definition);
   var newH5 = $("<h5>");
   var w = word.toUpperCase();
   $(newH5).text(w);
@@ -30,23 +27,6 @@ function renderUD(r, word) {
   }
 }
 
-// function searchUD(userInput) {
-//   var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`;
-//   const settings = {
-//     "async": true,
-//     "crossDomain": true,
-//     "url": `${q}`,
-//     "method": "GET",
-//     "headers": {
-//       "x-rapidapi-key": "a81dca7536msh6bc3d3699a87596p1ae89bjsn3961fc20945c",
-//       "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
-//     },
-//   };
-//   $.ajax(settings).done(function (response) {
-//     console.log(userInput);
-//     renderUD(response, userInput);
-//   });
-// };
 
 function searchUD(userInput) {
   var savedHistory = localStorage.getItem("history");//21-25 local storage !Don't change!
@@ -75,17 +55,6 @@ function searchUD(userInput) {
   });
 };
 
-// function searchD(userInput) {
-//   var apiKEY = "72594bc0-4725-41da-8a59-a971cbb8960b";
-//   var queryURL = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${userInput}?key=${apiKEY}`;
-//   $.ajax({
-//     url: queryURL,
-//     method: "GET",
-//   }).then(function (response) {
-//     console.log(response);
-//     displayDef(userInput, response)
-//   });
-// };
 
 //function to grab api
 function searchD(userInput) {
@@ -95,35 +64,11 @@ function searchD(userInput) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    console.log(response);
     var audioFileURL;
     displayDef(userInput, response);
     playAudio(response, audioFileURL);
   });
 };
-
-// function displayDef(userInput, response) {
-//   var defLength = response[0].shortdef.length
-//   var def = response[0].shortdef
-//   var noun = response[0].fl
-//   var defEntry = $("<div>");
-//   var h5 = $("<h5>");
-//   $(h5).addClass("dictH5");
-//   h5.text(userInput + "; " + noun);
-//   $(defEntry).append(h5);
-//   var newP = $("<p>");
-//   var hw = response[0].hwi.hw;
-//   var mw = response[0].hwi.prs[0].mw;
-//   $(newP).text(hw + "|" + mw);
-//   $(defEntry).append(newP);
-//   $("#dictionary").append(defEntry);
-//   for (var i = 0; i < defLength; i++) {
-//     var para = $("<p>")
-//     $(para).addClass("dictPara");
-//     para.text((i + 1) + ": " + def[i])
-//     $(defEntry).append(para);
-//   };
-// };
 
 // function to display definition of user inputted word
 function displayDef(userInput, response,) {
@@ -158,7 +103,6 @@ function displayDef(userInput, response,) {
 function playAudio(response, audioFileURL) {
   var subDirec = "";
   var file = response[0].hwi.prs[0].sound.audio;
-  console.log(file)
   var firstThree = "";
   var gg = firstThree.slice(0, 2)
   var specialCharacters = ["@","%","+","\\",",","/","'","!","#","$","^","?",":",",",")","(","}","{","]","[","~","-","_",".",];
@@ -192,14 +136,11 @@ function playAudio(response, audioFileURL) {
   while (x = 0);
   // make audio var with the sound URL from the api
   audioFileURL = `https://media.merriam-webster.com/audio/prons/en/us/wav/${subDirec}/${file}.wav`
-  console.log(file.slice(0))
-  console.log(audioFileURL)
   var icon = $("<i>");
   $(icon).addClass("small material-icons");
   $(icon).html("play_circle_outline");
   $(icon).attr("id", "audioPlayer");
   $(icon).attr("data-URL", audioFileURL);
-  console.log(audioFileURL)
   $(icon).attr("onclick", "playSound()");
   $("#icon").append(icon);
 };
@@ -208,12 +149,9 @@ function playAudio(response, audioFileURL) {
 function playSound() {
   var URL = $("#audioPlayer").attr("data-URL")
   new Audio(URL).play();
-  console.log(URL)
 };
 
 function renderUD(r, word) {
-  console.log(r);
-  console.log(r.list[0].definition);
   var newH5 = $("<h5>");
   var w = word.toUpperCase();
   $(newH5).text(w);
@@ -225,7 +163,6 @@ function renderUD(r, word) {
     var udDefinition = r.list[i].definition;
     var udDefinitionSTR = JSON.stringify(udDefinition);
     var newDef = udDefinitionSTR.replace(/\\r\\n/g, '<br>');
-    console.log(newDef);
     var newP = $("<p>");
     $(newP).html((i + 1) + ": " + "<br>" + newDef);
     $(newP).addClass("dictPara");

@@ -29,7 +29,6 @@ function searchUD(userInput) {
   a.addClass("info");
   $("#history").prepend(a); //Don't change 
   var q = `https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${userInput}`; 
-  console.log(q);
   const settings = {
     "async": true,
     "crossDomain": true,

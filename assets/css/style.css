@@ -25,12 +25,6 @@ h4 {
     font-weight: 400;
 }
 
-/* .banner-image {
-    background-size: cover;
-    background-position: center;
-    padding-bottom: 50%;
-} */
-
 nav {
     background-color: #bca578;
     margin-top: 10px;
@@ -61,7 +55,6 @@ nav {
     margin-left: 15px;
     margin-right: 10px;  
 }
-
 
 li {
     padding: 40px;

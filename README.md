@@ -56,7 +56,19 @@ This project fulfill the following requirements:
 * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 ​
 ## Developers:
-* William Chenausky   Github: https://github.com/wchenausky  Contact: williamchenausky@yahoo.com
-* Marisa NeSmith   Github: https://github.com/marisanesmith   Contact: marisanesmith@yahoo.com
-* Nicholas Podniestrzanski   Github:  https://github.com/Nickpodski Contact: nickpodski@gmail.com
-* Shuting Zhao  Github: https://github.com/zst199394  Contct: zst9394@outlook.com
+
+### William Chenausky   
+* Github: https://github.com/wchenausky  
+* Contact: williamchenausky@yahoo.com
+
+### Marisa NeSmith   
+* Github: https://github.com/marisanesmith   
+* Contact: marisanesmith@yahoo.com
+
+### Nicholas Podniestrzanski 
+* Github:  https://github.com/Nickpodski 
+* Contact: nickpodski@gmail.com
+
+### Shuting Zhao  
+* Github: https://github.com/zst199394  
+* Contct: zst9394@outlook.com

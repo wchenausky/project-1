@@ -5,8 +5,10 @@
     }
 }
 
-.parallax img {
-    width: 100%
+.topImage {
+    position: relative;
+    /* top: 0; */
+    min-width: 100%;
 }
 
 h1 {
@@ -34,14 +36,14 @@ h4 {
     font-weight: 400;
 }
 
-nav {
+/* nav {
     background-color: #bca578;
     margin-top: 10px;
     text-align: center;
     height: 80px;
     padding-right: 7px;
     border-radius: 4px;
-}
+} */
 
 .searchCard {
     padding: 8px;

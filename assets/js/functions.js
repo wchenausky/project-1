@@ -6,10 +6,7 @@ function init() {
   var i = Math.floor(Math.random() * wordOptions.length);
   var newItem = $("<li>");
   newItem.text(wordOptions[i]);
-  $("#wordOfDay").append(newItem);
   $("#wordOfDay2").append(newItem);
-  $('.parallax').parallax();
-
 };
 
 function renderUD(r, word) {
@@ -211,6 +208,7 @@ function renderHistory(arr) {
     $("#history").prepend(a);
   }
 };
+
 
 
 

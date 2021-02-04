@@ -75,4 +75,8 @@ $("#clearHistory").click(function(e) {
   $("#history").empty();
 });
 
+$(document).ready(function(){
+  $('.parallax').parallax();
+});
+
 init();

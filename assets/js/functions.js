@@ -47,7 +47,6 @@ function searchUD(userInput) {
   });
 };
 
-
 //function to grab api
 function searchD(userInput) {
   var apiKEY = "72594bc0-4725-41da-8a59-a971cbb8960b";
@@ -150,13 +149,13 @@ function storage(userInput) {
   if (savedHistory === null) {
     historyArray.push(u);
     localStorage.setItem("history", JSON.stringify(historyArray));
+    checkLength(historyArray);
     renderHistory(historyArray);
   } else {
     if ($.inArray(u, savedHistory) != -1) {
       savedHistory = arrayRemove(savedHistory, u);
       pushSavedHistory(savedHistory, historyArray);
       historyArray.push(u);
-      console.log(historyArray)
       localStorage.removeItem("history");
       localStorage.setItem("history", JSON.stringify(historyArray));
       checkLength(historyArray);
@@ -180,7 +179,9 @@ function arrayRemove(arr, value) {
 
 function checkLength(arr) {
   if (arr.length > 5) {
-    arr.shift();
+    do {
+      arr.shift();
+    } while (arr.length > 5);
   }
 };
 

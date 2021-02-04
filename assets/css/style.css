@@ -3,9 +3,11 @@
     body, html {
         height: auto;
     }
-    .parallax img {
-        max-height: 130%
-    }
+}
+
+*{
+    padding: 0;
+    margin: 0;
 }
 
 h1 {
@@ -19,11 +21,13 @@ h1 {
     color: white;
 }
 
-p {
+.first-para {
     
     font-family: 'Montserrat';
     font-size: 25px;
-    padding-right: 8px;
+    padding: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px
 }
 
 h4 {
@@ -107,6 +111,7 @@ text-align: left;
     text-transform: uppercase;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 80px;
 }
 
 #textarea1, #textarea2 {

@@ -8,6 +8,8 @@ $("#startSearch").click(function (e) {
   }, 1000);
   var userInput = $("#textarea1").val().trim();
   $("#textarea1").val("");
+  randomDWord(newItem);
+  $("#wordOfDayTwo").append(newItem);
   searchUD(userInput);
   searchD(userInput);
   storage(userInput);
@@ -35,6 +37,8 @@ $("#startSearchTwo").click(function (e) {
   $("#dictionary").empty();
   $("#textarea2").val("");
   $("#labelTwo").removeClass("active");
+  randomDWord(newItem);
+  $("#wordOfDayTwo").append(newItem);
   searchUD(userInput);
   searchD(userInput);
   storage(userInput);
@@ -44,6 +48,8 @@ $("#history").on("click", "li", function (e) {
   var returnWord = $(this).text();
   $("#urbanDictionary").empty();
   $("#dictionary").empty();
+  randomDWord(newItem);
+  $("#wordOfDayTwo").append(newItem);
   searchUD(returnWord);
   searchD(returnWord);
   storage(returnWord);
@@ -57,6 +63,8 @@ $("#wordOfDay").click(function () {
     $("#pageTwo").show();
     $("#pageTwo").removeClass("fade-out");
   }, 1000);
+  randomDWord(newItem);
+  $("#wordOfDayTwo").append(newItem);
   searchUD(a);
   searchD(a);
   storage(a);
@@ -64,6 +72,8 @@ $("#wordOfDay").click(function () {
 
 $("#wordOfDay2").click(function () {
   var a = $(this).text();
+  randomDWord(newItem);
+  $("#wordOfDayTwo").append(newItem);
   searchUD(a);
   searchD(a);
   storage(a);
@@ -73,10 +83,6 @@ $("#clearHistory").click(function(e) {
   e.preventDefault();
   localStorage.clear();
   $("#history").empty();
-});
-
-$(document).ready(function(){
-  $('.parallax').parallax();
 });
 
 init();

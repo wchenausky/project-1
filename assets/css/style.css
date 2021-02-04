@@ -5,12 +5,6 @@
     }
 }
 
-.topImage {
-    position: relative;
-    /* top: 0; */
-    min-width: 100%;
-}
-
 h1 {
     font-family: 'Montserrat';
     text-transform: uppercase;
@@ -23,10 +17,11 @@ h1 {
 }
 
 .first-para {
-    padding: 30px;
     font-family: 'Montserrat';
     font-size: 25px;
-    padding-right: 8px;
+    padding: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px
 }
 
 h4 {
@@ -100,12 +95,11 @@ li {
 
 #wordOfDay {
     border: solid 1px;
-    border-radius: 100px;
     padding: 5px;
-    /* margin: 10px; */
     text-transform: uppercase;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 80px;
 }
 
 #startSearchTwo ,#clearHistory {
@@ -127,15 +121,9 @@ li {
     cursor: pointer;
 }
 
-/* .parallax-container {
-    height: 200px;
-    width: 1500px;
-} */
-/* 
-.parallex {
-    background-size: cover;
-    background-position: center;
-} */
+#textarea1 {
+    padding: 20px;
+}
 
 /* article {
     white-space: nowrap;

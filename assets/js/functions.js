@@ -1,4 +1,4 @@
-var wordOptions = ["Bamboozle", "Durk", "Knocking", "Tight", "Dope", "Ratchet", "Poop", "Novel", "Bucket", "lol", "Like", "Twit"];
+var wordOptions = ["Bamboozle", "Durk", "Knocking", "Tight", "Dope", "Ratchet", "Poop", "Novel", "Bucket", "Punk", "Like", "Twit"];
 var displayWord = [];
 var results = 2;
 
@@ -7,6 +7,8 @@ function init() {
   var newItem = $("<li>");
   newItem.text(wordOptions[i]);
   $("#wordOfDay").append(newItem);
+  $('.parallax').parallax();
+
 };
 
 function renderUD(r, word) {
@@ -199,5 +201,7 @@ function renderHistory(arr) {
     $("#history").prepend(a);
   }
 };
+
+
 
 

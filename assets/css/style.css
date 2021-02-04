@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+@media only screen and (min-width: 768px) {
+    body, html {
+        height: auto;
+    }
+}
+
+.parallax img {
+    width: 100%
+}
 
 h1 {
     font-family: 'Montserrat';
@@ -14,8 +23,8 @@ h1 {
 .first-para {
     padding: 30px;
     font-family: 'Montserrat';
-    text-align: center;
     font-size: 25px;
+    padding-right: 8px;
 }
 
 h4 {
@@ -69,7 +78,6 @@ li {
     text-align: left;
 }
 
-
 .top-search {
     font-size: 30px;
     text-transform: uppercase;
@@ -84,6 +92,9 @@ li {
     color :rgb(3, 39, 44);
 }
 
+#history {
+    cursor: pointer;
+}
 
 #wordOfDay {
     border: solid 1px;
@@ -92,4 +103,31 @@ li {
     /* margin: 10px; */
     text-transform: uppercase;
     font-size: 16px;
+    cursor: pointer;
 }
+
+#textarea1, #textarea2 {
+    cursor: pointer;
+}
+
+/* .parallax-container {
+    height: 200px;
+    width: 1500px;
+} */
+/* 
+.parallex {
+    background-size: cover;
+    background-position: center;
+} */
+
+/* article {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} */
+
+/* .ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} */

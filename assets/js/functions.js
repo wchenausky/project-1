@@ -1,4 +1,4 @@
-var wordOptions = ["Bamboozle", "Durk", "Knocking", "Tight", "Dope", "Ratchet", "Poop", "Novel", "Bucket", "lol", "Like", "Twit"];
+var wordOptions = ["Bamboozle", "Durk", "Knocking", "Tight", "Dope", "Ratchet", "Poop", "Novel", "Bucket", "Punk", "Like", "Twit"];
 var displayWord = [];
 var results = 2;
 
@@ -7,6 +7,8 @@ function init() {
   var newItem = $("<li>");
   newItem.text(wordOptions[i]);
   $("#wordOfDay").append(newItem);
+  $('.parallax').parallax();
+
 };
 
 function renderUD(r, word) {
@@ -54,11 +56,19 @@ function searchD(userInput) {
   $.ajax({
     url: queryURL,
     method: "GET",
-  }).then(function (response) {
+    error: noWord(),
+  }).done(function (response) {
     var audioFileURL;
     displayDef(userInput, response);
     playAudio(response, audioFileURL);
   });
+};
+
+function noWord() {
+  var wordP = $("<p>");
+  $(wordP).text("This word can not be defined.");
+  $(wordP).addClass("dictPara");
+  $("#dictionary").append(wordP);
 };
 
 // function to display definition of user inputted word
@@ -200,5 +210,7 @@ function renderHistory(arr) {
     $("#history").prepend(a);
   }
 };
+
+
 
 

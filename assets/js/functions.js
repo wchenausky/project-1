@@ -7,8 +7,6 @@ function init() {
   var newItem = $("<li>");
   newItem.text(wordOptions[i]);
   $("#wordOfDay").append(newItem);
-  $('.parallax').parallax();
-
 };
 
 function renderUD(r, word) {
@@ -210,6 +208,7 @@ function renderHistory(arr) {
     $("#history").prepend(a);
   }
 };
+
 
 
 

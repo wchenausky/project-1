@@ -5,11 +5,6 @@
     }
 }
 
-*{
-    padding: 0;
-    margin: 0;
-}
-
 h1 {
     font-family: 'Montserrat';
     text-transform: uppercase;
@@ -22,7 +17,6 @@ h1 {
 }
 
 .first-para {
-    
     font-family: 'Montserrat';
     font-size: 25px;
     padding: 50px;
@@ -37,14 +31,14 @@ h4 {
     font-weight: 400;
 }
 
-nav {
+/* nav {
     background-color: #bca578;
     margin-top: 10px;
     text-align: center;
     height: 80px;
     padding-right: 7px;
     border-radius: 4px;
-}
+} */
 
 .searchCard {
     padding: 8px;
@@ -73,18 +67,12 @@ li {
     font-size: 40px;
 }
 
-.dictH5 {
-    font-size: 30px; 
+.dictH5 ,.dictPara {
+    font-size: 20px; 
     margin-right: 10px;
-    padding: 8px;
-    text-transform: uppercase;
+    padding: 10px;
+    /* text-transform: uppercase; */
     text-align: left;
-    line-height: 0.5px;
-}
-
-.dictPara {
-font-size: 20px;
-text-align: left;
 }
 
 .top-search {
@@ -97,7 +85,7 @@ text-align: left;
     font-size: 30px;
     font-weight: 400;
     text-align: left;
-    padding: 0;
+    padding: 7px;
     color :rgb(3, 39, 44);
 }
 
@@ -112,6 +100,21 @@ text-align: left;
     font-size: 16px;
     cursor: pointer;
     margin-top: 80px;
+}
+
+#startSearchTwo ,#clearHistory {
+    background-color: rgb(75, 106, 243);
+}
+
+
+#wordOfDay2 {
+    border: rgb(3, 39, 44) solid 2px;
+    border-radius: 100px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-size: 8px;
+    cursor: pointer;
+    text-align: center;
 }
 
 #textarea1, #textarea2 {
@@ -133,4 +136,3 @@ text-align: left;
     overflow: hidden;
     text-overflow: ellipsis;
 } */
-

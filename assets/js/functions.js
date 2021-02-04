@@ -6,9 +6,7 @@ function init() {
   var i = Math.floor(Math.random() * wordOptions.length);
   var newItem = $("<li>");
   newItem.text(wordOptions[i]);
-  $("#wordOfDay").append(newItem);
-  $('.parallax').parallax();
-
+  $("#wordOfDay2").append(newItem);
 };
 
 function renderUD(r, word) {
@@ -22,7 +20,7 @@ function renderUD(r, word) {
     var udDefinitionSTR = JSON.stringify(udDefinition);
     var newDef = udDefinitionSTR.replace(/\\r\\n/g, '<br>');
     var newP = $("<p>");
-    $(newP).html((i + 1) + ": " + "<br>" + newDef);
+    $(newP).html((i + 1) + ": "+ newDef); // delete <br> ooks better
     $(newP).addClass("dictPara");
     $("#urbanDictionary").append(newP);
   }
@@ -210,6 +208,7 @@ function renderHistory(arr) {
     $("#history").prepend(a);
   }
 };
+
 
 
 

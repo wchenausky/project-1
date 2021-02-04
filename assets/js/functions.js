@@ -6,7 +6,7 @@ function init() {
   var i = Math.floor(Math.random() * wordOptions.length);
   var newItem = $("<li>");
   newItem.text(wordOptions[i]);
-  $("#wordOfDay").append(newItem);
+  $("#wordOfDay2").append(newItem);
 };
 
 function renderUD(r, word) {

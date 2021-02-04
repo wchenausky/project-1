@@ -14,6 +14,7 @@ function randomDWord (newItem) {
   return newItem;
 }
 
+
 function renderUD(r, word) {
   var newH5 = $("<h5>");
   var w = word.toUpperCase();

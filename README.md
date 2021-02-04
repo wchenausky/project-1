@@ -9,7 +9,7 @@
 
 ## Project Overview
 
-In this project, our team is building a responsive application where users can search for a word to retrieve a definition from the Merrian Webster Dictionary, and a definition from the Urban Dictionary. The result will show the users the real definition of the word as a slang definition.
+In this project, our team is building a responsive application where users can search for a word to retrieve a definition from the Merrian Webster Dictionary, and a definition from the Urban Dictionary. The result will show the users the real definition of the word as well as a slang definition.
 
 ## Languages and Libraries:
 
@@ -25,12 +25,12 @@ In this project, our team is building a responsive application where users can s
 
 ## User story:
 
-Slang! It's for everyone! Weather you're an old school kool cat trying to pick up on the latest trends, an out of touch parent trying to decipher what your childern are saying to you. "Homonym, Say What?" is here for you. We specalize in helping find the true meaning of these new word trends and the most up to date slang versions in one simple search! With "Homonym Say What?" you'll never be out of the loop again!
+Slang! It's for everyone! Whether you're an old school kool cat trying to pick up on the latest trends, an out of touch parent trying to decipher what your childern are saying to you. "Homonym, Say What?" is here for you. We specialize in helping find the true meaning of these new word trends and the most up to date slang versions in one simple search! With "Homonym Say What?" you'll never be out of the loop again!
 
 
 ## User Functionality:
-User can get top 2 definitions from both dictionaries.
-User can learn more interesting words from urban dictionary from our daily recommandation.
+User can get the top two definitions from both dictionaries.
+User can learn more interesting words from urban dictionary from our daily recommendations.
 ​
 ## Process:
 This project fulfill the following requirements:

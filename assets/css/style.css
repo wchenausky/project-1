@@ -5,6 +5,12 @@
     }
 }
 
+.topImage {
+    position: relative;
+    /* top: 0; */
+    min-width: 100%;
+}
+
 h1 {
     font-family: 'Montserrat';
     text-transform: uppercase;

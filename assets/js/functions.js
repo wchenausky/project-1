@@ -54,11 +54,19 @@ function searchD(userInput) {
   $.ajax({
     url: queryURL,
     method: "GET",
-  }).then(function (response) {
+    error: noWord(),
+  }).done(function (response) {
     var audioFileURL;
     displayDef(userInput, response);
     playAudio(response, audioFileURL);
   });
+};
+
+function noWord() {
+  var wordP = $("<p>");
+  $(wordP).text("This word can not be defined.");
+  $(wordP).addClass("dictPara");
+  $("#dictionary").append(wordP);
 };
 
 // function to display definition of user inputted word

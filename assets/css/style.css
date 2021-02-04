@@ -75,7 +75,7 @@ li {
 .dictH5 ,.dictPara {
     font-size: 20px; 
     margin-right: 10px;
-    padding: 20px;
+    padding: 10px;
     /* text-transform: uppercase; */
     text-align: left;
 }
@@ -90,7 +90,7 @@ li {
     font-size: 30px;
     font-weight: 400;
     text-align: left;
-    padding: 0;
+    padding: 7px;
     color :rgb(3, 39, 44);
 }
 
@@ -106,6 +106,21 @@ li {
     text-transform: uppercase;
     font-size: 16px;
     cursor: pointer;
+}
+
+#startSearchTwo ,#clearHistory {
+    background-color: rgb(75, 106, 243);
+}
+
+
+#wordOfDay2 {
+    border: rgb(3, 39, 44) solid 2px;
+    border-radius: 100px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-size: 8px;
+    cursor: pointer;
+    text-align: center;
 }
 
 #textarea1, #textarea2 {

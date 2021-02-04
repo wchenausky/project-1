@@ -62,6 +62,13 @@ $("#wordOfDay").click(function () {
   storage(a);
 });
 
+$("#wordOfDay2").click(function () {
+  var a = $(this).text();
+  searchUD(a);
+  searchD(a);
+  storage(a);
+});
+
 $("#clearHistory").click(function(e) {
   e.preventDefault();
   localStorage.clear();

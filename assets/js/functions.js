@@ -7,6 +7,7 @@ function init() {
   var newItem = $("<li>");
   newItem.text(wordOptions[i]);
   $("#wordOfDay").append(newItem);
+  $("#wordOfDay2").append(newItem);
   $('.parallax').parallax();
 
 };

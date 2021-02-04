@@ -1,13 +1,19 @@
 var wordOptions = ["Bamboozle", "Durk", "Knocking", "Tight", "Dope", "Ratchet", "Poop", "Novel", "Bucket", "Punk", "Like", "Twit"];
 var displayWord = [];
 var results = 2;
+var newItem = $("<li>");
 
 function init() {
-  var i = Math.floor(Math.random() * wordOptions.length);
-  var newItem = $("<li>");
-  newItem.text(wordOptions[i]);
+  randomDWord(newItem);
   $("#wordOfDay").append(newItem);
 };
+
+function randomDWord (newItem) {
+  var i = Math.floor(Math.random() * wordOptions.length);
+  newItem.text(wordOptions[i]);
+  return newItem;
+}
+
 
 function renderUD(r, word) {
   var newH5 = $("<h5>");

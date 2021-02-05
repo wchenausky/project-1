@@ -57,8 +57,6 @@ $("#history").on("click", "li", function (e) {
   var returnWord = $(this).text();
   $("#urbanDictionary").empty();
   $("#dictionary").empty();
-  randomDWord(newItem);
-  $("#wordOfDayTwo").append(newItem);
   searchUD(returnWord);
   searchD(returnWord);
   storage(returnWord);
@@ -79,8 +77,10 @@ $("#wordOfDay").click(function () {
   storage(a);
 });
 
-$("#wordOfDay2").click(function () {
+$("#wordOfDayTwo").click(function () {
   var a = $(this).text();
+  $("#urbanDictionary").empty();
+  $("#dictionary").empty();
   randomDWord(newItem);
   $("#wordOfDayTwo").append(newItem);
   searchUD(a);

@@ -4,8 +4,9 @@
 ## Team: WMSN Develop Group
 
 
-* URL : http://127.0.0.1:5502/Project_Review/index.html
-![web home](assets/images/webhome.png)
+[GitHub Live Site](https://)
+![Home Page](assets/images/home-page.png)
+![Home Page Two](assets/images/home-page-one.png)
 
 ## Project Overview
 
@@ -19,9 +20,9 @@ In this project, our team is building a responsive application where users can s
 * jQuery
 * Google
 * W3school
-* API
+* API's (dictionary.com and urbandictionary.com)
 * Node
-* Materialize
+* Materialize 
 
 ## User story:
 
@@ -29,11 +30,11 @@ Slang! It's for everyone! Whether you're an old school kool cat trying to pick u
 
 
 ## User Functionality:
-User can get the top two definitions from both dictionaries.
-User can learn more interesting words from urban dictionary from our daily recommendations.
+User can enter their search word to get the top two definitions from both dictionaries.
+User can also select a predetermined word from our Developer's Choice
 ​
 ## Process:
-This project fulfill the following requirements:
+This project fulfills the following requirements:
 ​
 * Use a CSS framework other than Bootstrap.
 ​

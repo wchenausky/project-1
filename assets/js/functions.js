@@ -2,6 +2,7 @@ var wordOptions = ["Bamboozle", "Dirk", "Knocking", "Tight", "Dope", "Ratchet", 
 var displayWord = [];
 var results = 2;
 var newItem = $("<li>");
+var letters = ["A","B","C"];
 
 
 function init() {
@@ -26,7 +27,7 @@ function renderUD(r, word) {
     var udDefinitionSTR = JSON.stringify(udDefinition);
     var newDef = udDefinitionSTR.replace(/\\r\\n/g, '<br>');
     var newP = $("<p>");
-    $(newP).html((i + 1) + ": " + newDef); // delete <br> ooks better
+    $(newP).html(letters[i] + ": " + newDef); // delete <br> ooks better
     $(newP).addClass("dictPara");
     $("#urbanDictionary").append(newP);
   }

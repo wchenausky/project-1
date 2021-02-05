@@ -179,3 +179,25 @@ input-field label {
     overflow: hidden;
     text-overflow: ellipsis;
 } */
+
+.modal-content{
+    background-color: #1e3f6b;
+    color: white;
+    text-align: center;
+}
+
+.modal .modal-footer {
+    background-color: #1e3f6b!important;
+    text-align: center !important;
+    
+}
+
+#modal-button{
+    background-color:white;
+    color: black;
+}
+
+#modal-button:hover{
+    color: white;
+    background-color: #7d2f2f;
+}

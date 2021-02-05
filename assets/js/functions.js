@@ -3,17 +3,17 @@ var displayWord = [];
 var results = 2;
 var newItem = $("<li>");
 
+
 function init() {
   randomDWord(newItem);
   $("#wordOfDay").append(newItem);
 };
 
-function randomDWord (newItem) {
+function randomDWord(newItem) {
   var i = Math.floor(Math.random() * wordOptions.length);
   newItem.text(wordOptions[i]);
   return newItem;
 }
-
 
 function renderUD(r, word) {
   var newH5 = $("<h5>");
@@ -26,7 +26,7 @@ function renderUD(r, word) {
     var udDefinitionSTR = JSON.stringify(udDefinition);
     var newDef = udDefinitionSTR.replace(/\\r\\n/g, '<br>');
     var newP = $("<p>");
-    $(newP).html((i + 1) + ": "+ newDef); // delete <br> ooks better
+    $(newP).html((i + 1) + ": " + newDef); // delete <br> ooks better
     $(newP).addClass("dictPara");
     $("#urbanDictionary").append(newP);
   }
@@ -43,13 +43,20 @@ function searchUD(userInput) {
       "x-rapidapi-key": "a81dca7536msh6bc3d3699a87596p1ae89bjsn3961fc20945c",
       "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
     },
-    error: function () {
-      alert("Please enter valid search term!");
-      location.reload();
+    error: function() {
+      console.clear();
     },
   };
   $.ajax(settings).done(function (response) {
-    renderUD(response, userInput);
+    if (response.list.length == 0) {
+      var nothing = "NOTHING FOUND!";
+      var newH5 = $("<h5>");
+      $(newH5).text(nothing);
+      $(newH5).addClass("dictH5");
+      $("#urbanDictionary").append(newH5);
+    } else {
+      renderUD(response, userInput);
+    }
   });
 };
 
@@ -60,47 +67,68 @@ function searchD(userInput) {
   $.ajax({
     url: queryURL,
     method: "GET",
-    error: noWord(),
   }).done(function (response) {
     var audioFileURL;
     displayDef(userInput, response);
-    playAudio(response, audioFileURL);
+    if (response.length > 0) {
+      if (typeof (response[0].hwi) != "undefined") {
+        playAudio(response, audioFileURL);
+      }
+    }
   });
 };
 
-function noWord() {
-  var wordP = $("<p>");
-  $(wordP).text("This word can not be defined.");
-  $(wordP).addClass("dictPara");
-  $("#dictionary").append(wordP);
-};
 
 // function to display definition of user inputted word
-function displayDef(userInput, response,) {
-  // vars to grab info from api
-  var defLength = response[0].shortdef.length
-  var def = response[0].shortdef
-  var wordClass = response[0].fl
-  //creates div to display user input
-  var defEntry = $("<div>");
-  var h5 = $("<h5>");
-  $(h5).attr("id", "icon");
-  //creates h5 to display user input word
-  $(h5).addClass("dictH5");
-  h5.text(userInput + "; " + wordClass + " ");
-  $(defEntry).append(h5);
-  //creates paragraph to display user input definition
-  var newP = $("<p>");
-  var hw = response[0].hwi.hw;
-  var mw = response[0].hwi.prs[0].mw;
-  $(newP).text(hw + "|" + mw);
-  $(defEntry).append(newP);
-  $("#dictionary").append(defEntry);
-  for (var i = 0; i < defLength; i++) {
-    var para = $("<p>")
-    $(para).addClass("dictPara");
-    para.text((i + 1) + ": " + def[i])
-    $(defEntry).append(para);
+function displayDef(userInput, response) {
+  if (response.length > 0) {
+    if (typeof (response[0].shortdef) !== 'undefined') {
+      var defLength = response[0].shortdef.length
+      var def = response[0].shortdef
+      var wordClass = response[0].fl
+      //creates div to display user input
+      var defEntry = $("<div>");
+      var h5 = $("<h5>");
+      $(h5).attr("id", "icon");
+      //creates h5 to display user input word
+      $(h5).addClass("dictH5");
+      h5.text(userInput + "; " + wordClass + " ");
+      $(defEntry).append(h5);
+      //creates paragraph to display user input definition
+      var newP = $("<p>");
+      var hw = response[0].hwi.hw;
+      var mw = response[0].hwi.prs[0].mw;
+      $(newP).text(hw + "|" + mw);
+      $(defEntry).append(newP);
+      $("#dictionary").append(defEntry);
+      for (var i = 0; i < defLength; i++) {
+        var para = $("<p>")
+        $(para).addClass("dictPara");
+        para.text((i + 1) + ": " + def[i])
+        $(defEntry).append(para);
+      };
+    } else {
+      userInput = "NOTHING FOUND!";
+      var defEntry = $("<div>");
+      var h5 = $("<h5>");
+      $(h5).attr("id", "icon");
+      //creates h5 to display user input word
+      $(h5).addClass("dictH5");
+      h5.text(userInput);
+      $(defEntry).append(h5);
+      $("#dictionary").append(defEntry);
+    }
+  } else {
+    userInput = "NOTHING FOUND!";
+    var defEntry = $("<div>");
+    var h5 = $("<h5>");
+    $(h5).attr("id", "icon");
+    //creates h5 to display user input word
+    $(h5).addClass("dictH5");
+    h5.text(userInput);
+    $(defEntry).append(h5);
+    //creates paragraph to display user input definition
+    $("#dictionary").append(defEntry);
   };
 };
 
@@ -186,7 +214,7 @@ function storage(userInput) {
 };
 
 function arrayRemove(arr, value) {
-  return arr.filter(function(ele) {
+  return arr.filter(function (ele) {
     return ele != value;
   })
 }
@@ -214,6 +242,12 @@ function renderHistory(arr) {
     $("#history").prepend(a);
   }
 };
+
+function OpenModal() { 
+  var instance = M.Modal.getInstance($("#modal1"));
+  instance.open();
+}
+
 
 
 

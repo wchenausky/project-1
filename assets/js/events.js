@@ -1,18 +1,22 @@
 $("#startSearch").click(function (e) {
   e.preventDefault();
-  $("#pageOne").addClass("fade-out");
+  var userInput = $("#textarea1").val().trim();
+  if (userInput !== "") {
+    $("#pageOne").addClass("fade-out");
   setTimeout(function () {
     $("#pageOne").hide();
     $("#pageTwo").show();
     $("#pageTwo").removeClass("fade-out");
   }, 1000);
-  var userInput = $("#textarea1").val().trim();
   $("#textarea1").val("");
   randomDWord(newItem);
   $("#wordOfDayTwo").append(newItem);
   searchUD(userInput);
   searchD(userInput);
   storage(userInput);
+  } else {
+    OpenModal();
+  }
 });
 
 $("#textarea1").keypress(function (event) {
@@ -32,16 +36,21 @@ $("#textarea2").keypress(function (event) {
 $("#startSearchTwo").click(function (e) {
   e.preventDefault();
   var userInput = $("#textarea2").val().trim();
-  $("#urbanDictionary").empty();
-  $("#labelTwo").removeClass("active");
-  $("#dictionary").empty();
-  $("#textarea2").val("");
-  $("#labelTwo").removeClass("active");
-  randomDWord(newItem);
-  $("#wordOfDayTwo").append(newItem);
-  searchUD(userInput);
-  searchD(userInput);
-  storage(userInput);
+  if (userInput !== "") {
+    $("#urbanDictionary").empty();
+    $("#labelTwo").removeClass("active");
+    $("#dictionary").empty();
+    $("#textarea2").val("");
+    $("#labelTwo").removeClass("active");
+    randomDWord(newItem);
+    $("#wordOfDayTwo").append(newItem);
+    searchUD(userInput);
+    searchD(userInput);
+    storage(userInput);
+  } else {
+    OpenModal();
+  }
+  
 });
 
 $("#history").on("click", "li", function (e) {
@@ -79,7 +88,7 @@ $("#wordOfDay2").click(function () {
   storage(a);
 });
 
-$("#clearHistory").click(function(e) {
+$("#clearHistory").click(function (e) {
   e.preventDefault();
   localStorage.clear();
   $("#history").empty();

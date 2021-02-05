@@ -160,3 +160,15 @@ li {
     overflow: hidden;
     text-overflow: ellipsis;
 } */
+
+.modal-content{
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.modal .modal-footer {
+    background-color: red !important;
+    text-align: center !important;
+    
+}

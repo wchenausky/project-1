@@ -3,8 +3,6 @@
 
 ## Team: WMSN Develop Group
 
-
-[GitHub Live Site](https://)
 ![web home page](assets/images/home-page.png)
 ![web home page two](assets/image/home-page-two.png)
 
@@ -55,6 +53,16 @@ This project fulfill the following requirements:
 * Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
 ​
 * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+
+## Providing a URL for the website
+1. Open Github.com
+2. Create a new repository
+3. Add a repository name and optional description
+4. Make the repo public and add a README
+5. Create repository
+6. Inside the repo go to settings, scroll down to GitHub Pages and publish your site to the Branch: main
+
+[GitHub Live Site](https://)
 ​
 ## Developers:
 

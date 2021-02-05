@@ -1,4 +1,4 @@
-var wordOptions = ["Bamboozle", "Durk", "Knocking", "Tight", "Dope", "Ratchet", "Poop", "Novel", "Bucket", "Punk", "Like", "Twit"];
+var wordOptions = ["Bamboozle", "Dirk", "Knocking", "Tight", "Dope", "Ratchet", "Poop", "Novel", "Bucket", "Punk", "Like", "Twit"];
 var displayWord = [];
 var results = 2;
 var newItem = $("<li>");

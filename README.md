@@ -4,9 +4,7 @@
 ## Team: WMSN Develop Group
 
 
-![web home page](assets/images/home-page.png)
-![web home page two](assets/image/home-page-two.png)
-
+![Home Page](assets/images/Homepage.png)
 
 ## Project Overview
 
@@ -64,8 +62,8 @@ This project fulfills the following requirements:
 5. Create repository
 6. Inside the repo go to settings, scroll down to GitHub Pages and publish your site to the Branch: main
 
-[GitHub Live Site](https://)
-​
+[GitHub Live Site](https://wchenausky.github.io/project-1/)
+
 ## Developers:
 
 ### William Chenausky   

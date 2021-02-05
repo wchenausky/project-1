@@ -140,19 +140,14 @@ li {
     padding: 20px;
 }
 
-.input-field input[type=text]:focus {
+.input-field textarea:focus {
     border-bottom: 1px solid #000 !important;
     box-shadow: 0 1px 0 0 #000 !important;
 }
 
-input-field label {
+.input-field textarea:focus + label {
     color: #000 !important;
-}
-
-.input-field input[type=text]:focus {
-    border-bottom: 1px solid #000 !important;
-    box-shadow: 0 1px 0 0 #000 !important;
-}
+  }
 
 #icon {
     cursor: pointer;

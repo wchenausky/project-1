@@ -13,13 +13,14 @@
 
 <body>
   <div id="webpage">
-    <div id="pageOne" class="container topImage">
+    <div class="container topImage">
       <div class="parallax-container parallax">
         <div class="parallax imgTop"><img class="responsive-img" src="./assets/images/homonym.png">
         </div>
       </div>
       <div class="section white">
-        <div class="row container">
+
+        <div id="pageOne" class="row container">
           <p class=" grey-text text-darken-3 lighten-3 flow-text first-para"> Noun; A word pronounced the same as
             another but differing in meaning whether spelled the
             same way or not. </p>
@@ -31,61 +32,65 @@
             </button>
           </div>
         </div>
+
+        <div id="pageTwo" class="fade-out" style="display: none;">
+          <div class="row container">
+
+            <div class="col s4">
+              <article class="card">
+                <img src="./assets/images/dictionary.jpg" alt="Dictionary.com Logo" width="200" height="160">
+                <div id="dictionary" class="card">
+                </div>
+              </article>
+            </div>
+
+            <div class="col s4">
+              <div class="input-field">
+                <textarea id="textarea2" class="materialize-textarea"></textarea>
+                <label for="textarea2">Enter a Word</label>
+                <button id="startSearchTwo" class="btn waves-effect waves-light" type="search" name="action">Search
+                  <i class="material-icons right">search</i>
+                </button>
+                <aside class="card info">
+                  <div class="card-title">
+                    <h5>Recent Search:</h5>
+                    <ol id="history"></ol>
+                  </div>
+                </aside>
+                <button id="clearHistory" class="btn waves-effect waves-light" type="search" name="action">Clear History
+                  <i class="material-icons right">clear</i></button>
+              </div>
+            </div>
+
+
+            <div class="col s4">
+              <article class="card">
+                <img src="./assets/images/urban.png" alt="Urban Dictionary Logo" width="200" height="110">
+                <div id="urbanDictionary" class="card">
+                </div>
+              </article>
+            </div>
+
+          </div>
+        </div>
+
       </div>
       <div class="parallax-container">
         <div class="parallax"><img class="responsive-img" src="./assets/images/developers-choice.jpg"></div>
       </div>
       <div class="section white"></div>
-      <div class="row container center">
-        <ul id="wordOfDay"> </ul>
+      <div id="wodOne" class="row container center">
+        <ul id="wordOfDay" href="#webpage"> </ul>
+      </div>
+      <div id="wodTwo" class="row container center fade-out" style="display: none;">
+        <ul id="wordOfDayTwo" href="#webpage"> </ul>
       </div>
     </div>
-    
-  </div>
-  </div>
-
-  <div id="pageTwo" class="fade-out" style="display: none;">
-
-    <div class="row">
-      <div class="input-field col s4">
-        <textarea id="textarea2" class="materialize-textarea"></textarea>
-        <label for="textarea2">Enter a Word</label>
-        <button id="startSearchTwo" class="btn waves-effect waves-light" type="search" name="action">Search
-          <i class="material-icons right">search</i>
-        </button>
-        <aside class="card info">
-          <div class="card-title">
-            <h5>Recent Search:</h5>
-            <ol id="history"></ol>
-          </div>
-        </aside>
-        <button id="clearHistory" class="btn waves-effect waves-light" type="search" name="action">Clear History
-          <i class="material-icons right">clear</i></button>
-        <div class="row container">
-          <ul id="wordOfDayTwo"></ul>
-        </div>
-      </div>
-
-
-      <div class="col s8">
-        <article class="card">
-          <img src="./assets/images/dictionary.jpg" alt="Dictionary.com Logo" width="200" height="160">
-          <div id="dictionary" class="card ellipsis">
-          </div>
-        </article>
-        <article class="card">
-          <img src="./assets/images/urban.png" alt="Urban Dictionary Logo" width="200" height="110">
-          <div id="urbanDictionary" class="card ellipsis">
-
-          </div>
-        </article>
-      </div>
-
-
-    </div>
 
   </div>
-  <a id="#modal-trigger" class="waves-effect waves-light btn modal-trigger"  href="#modal1"
+  </div>
+
+  <a id="#modal-trigger" class="waves-effect waves-light btn modal-trigger" href="#modal1"
     style="display: none;">Modal</a>
   <div id="modal1" class="modal">
     <div class="modal-content">

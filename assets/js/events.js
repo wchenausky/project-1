@@ -67,7 +67,7 @@ $("#history").on("click", "li", function (e) {
 });
 
 $("#wordOfDay").click(function () {
-  var a = $(this).text();
+  var a = $(this).text().trim();
   $('html, body').animate({ scrollTop: 0 }, 'fast');
   $("#pageOne").addClass("fade-out");
   setTimeout(function () {
@@ -86,7 +86,8 @@ $("#wordOfDay").click(function () {
 });
 
 $("#wordOfDayTwo").click(function () {
-  var a = $(this).text();
+  var a = $(this).text().trim();
+  console.log(a);
   $('html, body').animate({ scrollTop: 0 }, 'fast');
   $("#urbanDictionary").empty();
   $("#dictionary").empty();

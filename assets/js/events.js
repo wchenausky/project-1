@@ -3,10 +3,14 @@ $("#startSearch").click(function (e) {
   var userInput = $("#textarea1").val().trim();
   if (userInput !== "") {
     $("#pageOne").addClass("fade-out");
+    $("#wodOne").addClass("fade-out");
   setTimeout(function () {
     $("#pageOne").hide();
     $("#pageTwo").show();
     $("#pageTwo").removeClass("fade-out");
+    $("#wodOne").hide();
+    $("#wodTwo").show();
+    $("#wodTwo").removeClass("fade-out");
   }, 1000);
   $("#textarea1").val("");
   randomDWord(newItem);
@@ -64,11 +68,15 @@ $("#history").on("click", "li", function (e) {
 
 $("#wordOfDay").click(function () {
   var a = $(this).text();
+  $('html, body').animate({ scrollTop: 0 }, 'fast');
   $("#pageOne").addClass("fade-out");
   setTimeout(function () {
     $("#pageOne").hide();
     $("#pageTwo").show();
     $("#pageTwo").removeClass("fade-out");
+    $("#wodOne").hide();
+    $("#wodTwo").show();
+    $("#wodTwo").removeClass("fade-out");
   }, 1000);
   randomDWord(newItem);
   $("#wordOfDayTwo").append(newItem);
@@ -79,6 +87,7 @@ $("#wordOfDay").click(function () {
 
 $("#wordOfDayTwo").click(function () {
   var a = $(this).text();
+  $('html, body').animate({ scrollTop: 0 }, 'fast');
   $("#urbanDictionary").empty();
   $("#dictionary").empty();
   randomDWord(newItem);
